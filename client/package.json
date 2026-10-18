@@ -1,0 +1,32 @@
+{
+  "name": "smart-event-booking-client",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "canvas-confetti": "^1.9.3",
+    "framer-motion": "^11.11.0",
+    "qrcode": "^1.5.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
+    "socket.io-client": "^4.7.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.2",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "vite": "^5.4.8"
+  },
+  "description": "```bash npm install cp .env.example .env     # set VITE_API_URL to your Express server npm run dev              # http://localhost:5173 npm run build            # production build in dist/ ```",
+  "main": "postcss.config.js",
+  "author": "",
+  "license": "ISC"
+}

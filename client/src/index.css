@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { @apply bg-paper text-ink font-sans antialiased; }
+:focus-visible { outline: 2px solid #3B34FF; outline-offset: 2px; }
+
+@layer components {
+  /* Ticket-stub card: semicircle notches at the perforation line, 64px above the bottom edge */
+  .stub {
+    --r: 11px;
+    --cut: 64px;
+    -webkit-mask:
+      radial-gradient(var(--r) at 0 calc(100% - var(--cut)), #0000 97%, #000) left / 51% 100% no-repeat,
+      radial-gradient(var(--r) at 100% calc(100% - var(--cut)), #0000 97%, #000) right / 51% 100% no-repeat;
+    mask:
+      radial-gradient(var(--r) at 0 calc(100% - var(--cut)), #0000 97%, #000) left / 51% 100% no-repeat,
+      radial-gradient(var(--r) at 100% calc(100% - var(--cut)), #0000 97%, #000) right / 51% 100% no-repeat;
+  }
+  .perf { border-top: 2px dashed rgb(20 18 43 / 0.2); }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-bold transition-transform duration-150 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-sun { @apply btn bg-sun text-ink hover:brightness-95; }
+  .btn-blue { @apply btn bg-blue text-white hover:bg-blue-deep; }
+  .btn-ghost { @apply btn border-2 border-ink/20 text-ink hover:border-ink/50; }
+  .btn-ghost-light { @apply btn border-2 border-white/40 text-white hover:border-white; }
+  .input { @apply w-full rounded-xl border-2 border-ink/15 bg-white px-4 py-3 text-ink placeholder:text-ink/40 focus:border-blue focus:outline-none; }
+  .input-error { @apply border-danger; }
+}
